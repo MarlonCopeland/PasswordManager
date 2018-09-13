@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="../css/app.css" />
+    <link rel="stylesheet" href="../fonts/css/all.css" />
+    <!--BLOG ABOUT HARD FUCKING HARD THIS WAS TO DO-->
+    <script>var $ = jQuery = require("jquery");</script>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div id="wrapper">
+        <div id="side-nav">
+            <ul style="list-style:none">
+                <li><a href="#" id="home" class="nav" alt="My Passwords"><i class="fas fa-passport"></i></a></li>
+                <li><a href="#" id="addPassword" class="nav" alt="Add A Password"><i class="fa fa-key"></i></a></li>
+                <li><a href="#" id="search" class="nav" alt="IDK Search?"><i class="fa fa-search"></i></a></li>
+                <li><a href="#" id="import" class="nav"><i class="fa fa-file-import"></i></a></li>
+                <li><a href="#" id="settings" class="nav"><i class="fa fa-cog"></i></a></li>
+
+            </ul>
+        </div>
+        <div id="top-bar">
+            <ul>
+                <li><a href="#"><i class="fa fa-user"></i></a></li>
+            </ul>
+        </div>
+        <div id="main">
+
+        </div>
+    </div>
+    <script>require('../scripts/renderer.js')</script>
+</body>
+<script>
+    var app = require("../scripts/app");
+    app.on("rendered", function (rendered) {
+        $("#main").html(rendered);
+    }); 
+           var showContent = function (view) {
+            app.emit("view-selected", view);
+        };
+
+    $(function () {
+        showContent("home");
+        // $("#home").on("click", function(){
+        //     app.emit("view-selected", "home");
+        // });
+
+        // $("#search").on("click", function(){
+        //     app.emit("view-selected", "search");
+        // });
+
+        $(".nav").on("click", function (ev) {
+            ev.preventDefault();
+            showContent(this.id);
+        });
+
+        //alternate implamentation that passess in the id...
+
+    });
+</script>
+
+</html>

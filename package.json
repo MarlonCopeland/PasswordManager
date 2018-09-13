@@ -1,0 +1,20 @@
+{
+  "name": "passwordmanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src\\main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "unjaded",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^2.0.9",
+    "electron-reload": "^1.2.5",
+    "fs-extra": "^7.0.0",
+    "gray-matter": "^4.0.1",
+    "handlebars": "^4.0.12",
+    "jquery": "^3.3.1",
+    "underscore": "^1.9.1"
+  }
+}
