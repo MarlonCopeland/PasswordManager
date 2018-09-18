@@ -22,7 +22,6 @@
                 <li><a href="#" id="search" class="nav" alt="IDK Search?"><i class="fa fa-search"></i></a></li>
                 <li><a href="#" id="import" class="nav"><i class="fa fa-file-import"></i></a></li>
                 <li><a href="#" id="settings" class="nav"><i class="fa fa-cog"></i></a></li>
-
             </ul>
         </div>
         <div id="top-bar">
@@ -38,12 +37,14 @@
 </body>
 <script>
     var app = require("../scripts/app");
+
     app.on("rendered", function (rendered) {
         $("#main").html(rendered);
-    }); 
-           var showContent = function (view) {
-            app.emit("view-selected", view);
-        };
+    });
+
+    var showContent = function (view) {
+        app.emit("view-selected", view);
+    };
 
     $(function () {
         showContent("home");
@@ -54,12 +55,10 @@
         // $("#search").on("click", function(){
         //     app.emit("view-selected", "search");
         // });
-
         $(".nav").on("click", function (ev) {
             ev.preventDefault();
             showContent(this.id);
         });
-
         //alternate implamentation that passess in the id...
 
     });
