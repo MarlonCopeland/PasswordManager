@@ -1,7 +1,8 @@
 <div id="login-nav">
     <h4 style="text-align:center;">My Logins</h4>
-    <ul>
-        <!-- __.each()-->
+    <ul id="loginlinks">
+        <img src="../img/Loading_icon.gif">
+        <!-- __.each()
         <li>
             <a href="#" id="one" class="login-link">EUI Login</a>
         </li>
@@ -10,14 +11,64 @@
         </li>
         <li>
             <a href="#" id="three" class="login-link">Citrix Login</a>
-        </li>
+        </li>-->
     </ul>
 </div>
-<div id="loginDetails">
-    <h2 id="loginName">Login Name Here</h2>
-    <p id="loginDetails">
-        Login Details are displayed here.
-    </p>
-    <button>Edit Login Details</button>
-    <button>Copy Password to Clipboard</button>
+<div id="login">
+    <h2 id="loginName">Loading...</h2>
+    <ul>
+        <li id="loginDescription"></li>
+        <li id="loginUsesAuthenticator"></li>
+        <li id="loginUsername"></li>
+        <input type="password" id="loginPassword">
+    </ul>
+  <input type="checkbox" onclick="showPassword()">Show Password 
+ <div></div>
+    <button onclick="EditLoginDetailsClick()">Edit Login Details</button>
+    <button onclick="CopyToClipboardClick()">Copy Password to Clipboard</button>
 </div>
+<script>
+    var lhtml = "";
+    var textManager = require("../scripts/textManager");
+    var dm = require("../scripts/jsonDataManager");
+    var selectedLogin =  {name: "", 
+        description: "",
+        username: "",
+        password: "",
+        usesAuth: ""}; //used to hold the selected login;
+
+    function showPassword() {
+    var x = document.getElementById("loginPassword");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+    //return a login, map to the elements above
+    function EditLoginDetailsClick(){
+        var loginName = document.getElementById("loginName").innerHTML;
+        app.emit("edit-login",textManager.getPasswordFromLoginName(loginName));
+    };
+    function CopyToClipboardClick(){
+        textManager.copyToClipboard(document.getElementById("loginPassword").innerHTML)
+    };
+    $(function (){
+        
+        //app.emit("load-logins", loginsHTML);
+
+        $("#loginlinks").innerHTML = dm.loadLogins();
+        //console.log("test" + lhtml)
+        dm.loadFirstLogin();
+        //event delegation! giving the event to the outer html element
+        //this allows me to assign an event to a div that changes or doesn't yet exist!
+        $("#loginlinks").on("click", ".login-link", function(ev){
+            ev.preventDefault();
+            dm.loadLogin(textManager.getPasswordFromLoginName(this.innerHTML));    
+            //app.emit("get-login", 
+            //textManager.getPasswordFromLoginName(this.innerHTML), login );
+        })
+
+       
+    });
+</script>

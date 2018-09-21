@@ -9,6 +9,7 @@
   "author": "unjaded",
   "license": "MIT",
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
     "electron": "^2.0.9",
     "electron-json-storage": "^4.1.2",
     "electron-reload": "^1.2.5",

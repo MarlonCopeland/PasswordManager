@@ -13,11 +13,19 @@ var App = function(){
         this.emit("rendered",view.toHtml());
     });
     this.on("submit-click", function(login){
-       console.log("got this???")
+       console.log("submit-click fired")
       dataManager.saveLogin(login);
-      dataManager.loadLogins();
     });
-
+    this.on("load-logins", function(loginsHTML){
+        console.log("load-logins fired")
+        dataManager.loadLogins(loginsHTML);
+    });
+    this.on("edit-login",function(loginName){
+        console.log("edit-login emitted")
+        var view = new View("addPassword");
+        this.emit("rendered", view.toHtml());
+        dataManager.editLogin(loginName);
+    });
 };
 
 util.inherits(App, Emitter);
