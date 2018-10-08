@@ -51,8 +51,16 @@
         app.emit("edit-login",textManager.getPasswordFromLoginName(loginName));
     };
     function CopyToClipboardClick(){
-        textManager.copyToClipboard(document.getElementById("loginPassword").innerHTML)
+        console.log(document.getElementById("loginName").innerHTML)
+        textManager.copyToClipboard(document.getElementById("loginPassword").value)
     };
+
+function importLogins(){
+    dm.importLogins();
+}
+function getAllLogins(){
+    dm.getAllLogins();
+}
     $(function (){
         
         //app.emit("load-logins", loginsHTML);

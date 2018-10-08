@@ -4,7 +4,7 @@ const cryptoJS = require('crypto-js');
 
 function copyToClipboard (text){
     clipboard.writeText(text);
-    
+    console.log("Added to clipboard" + text)
 }
 
 //shows password that is obscured by dots

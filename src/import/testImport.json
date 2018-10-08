@@ -1,0 +1,27 @@
+{
+    
+        "pwdMgrlogin-Pass One": {
+            "loginDescription": "Password Description 1",
+            "loginName": "Pass One",
+            "loginPassword": "Simpleton",
+            "loginUsername": "Bart",
+            "loginUsesAuthenticator": false,
+            "loginGroup": "Group1"
+        },
+        "pwdMgrlogin-Pass Two": {
+            "loginDescription": "Password Description 2",
+            "loginName": "Pass Two",
+            "loginPassword": "Simpleton",
+            "loginUsername": "Lisa",
+            "loginUsesAuthenticator": true,
+            "loginGroup": "Group1"
+        },
+        "pwdMgrlogin-Pass Three": {
+            "loginDescription": "Password Description 3",
+            "loginName": "Pass Three",
+            "loginPassword": "Simpleton",
+            "loginUsername": "Home",
+            "loginUsesAuthenticator": true,
+            "loginGroup": "Group2"
+        }
+    }
