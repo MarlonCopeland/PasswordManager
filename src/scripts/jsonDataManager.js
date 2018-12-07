@@ -1,3 +1,5 @@
+//https://github.com/electron-userland/electron-json-storage#module_storage.remove
+
 var util2 = require("util");
 var path = require("path");
 var fs = require("fs");
@@ -6,7 +8,10 @@ const storage = require("electron-json-storage");
 const textManager = require("../scripts/textManager");
 const { dialog } = require('electron').remote; //TODO: learn about remote importing here 
 
-storage.setDataPath(os.tmpdir() + "/pwm/");
+const storagePath = "C://Users/MarlonCopeland/Documents";
+//os.tmpdir() 
+
+storage.setDataPath(storagePath + "/pwm/");
 const datapath = storage.getDataPath();
 //console.log(datapath);
 
@@ -115,13 +120,26 @@ function saveLogin(login) {
     //loadLogin('fda');
     var encryptedPassword = textManager.EncryptText(login.password);
     console.log(login.name + " " + login.description);
+    $("#loginName").val("");
+    $("#loginGroup").val("");
+    $("#loginDescription").val("");
+    $("#loginUsername").val("");
+    $("#loginPassword").val("");
+    $("#loginUsesAuthenticator").val("");
     storage.set('pwdMgrlogin-' + login.name, {
         loginName: login.name, loginDescription: login.description,
         loginUsername: login.username, loginPassword: encryptedPassword,
         loginUsesAuthenticator: login.usesAuth
     }, function (error) {
         if (error) throw error;
+
     });
+
+    $("#StatusText").html("Password Saved");
+
+    console.log("savedLogin");
+
+
 };
 
 //maybe use handlebars to handle looping through the list this returns???
@@ -143,16 +161,19 @@ function loadLogins() {
     });
 };
 
+function deleteLogin(loginName) {
+    storage.remove(loginName, function(error) {
+        if (error) throw error;
+      });
+};
 
-
+module.exports.deleteLogin = deleteLogin;
 module.exports.saveLogin = saveLogin;
 module.exports.loadLogin = loadLogin;
 module.exports.loadLogins = loadLogins;
 module.exports.loadFirstLogin = loadFirstLogin;
 module.exports.editLogin = editLogin;
-
 module.exports.getAllLogins = getAllLogins;
 module.exports.importLogins = importLogins;
-
 module.exports.login = login;
 

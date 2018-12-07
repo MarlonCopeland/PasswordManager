@@ -19,7 +19,7 @@ body {
 
 #top-bar {
   text-align: right;
-  background-color: #f5f5f5;
+  background-color: #999;
   height:40px;
   position: absolute;
   left:71px;
@@ -28,7 +28,7 @@ body {
   border-bottom: 1px solid #e5e5e5;
 }
 #top-bar a {
-  color: #de8d4b
+  color: #000;
 }
 #top-bar ul {
   list-style: none;
@@ -36,6 +36,7 @@ body {
   margin-right: 18px;
   margin-top: 0;
   margin-bottom: 0;
+  float: left;
 }
 #top-bar li {
   display: inline;
@@ -63,7 +64,7 @@ body {
 
 #side-nav a {
   font-size: 2rem;
-  color:#555
+  color:#a31f1f;
 }
 #side-nav a:hover {
   color: #52affb

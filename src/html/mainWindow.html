@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Password Manager</title>
+    <title>Swiss</title>
     <link rel="stylesheet" href="../css/app.css" />
     <link rel="stylesheet" href="../fonts/css/all.css" />
     <!--BLOG ABOUT HARD FUCKING HARD THIS WAS TO DO-->
@@ -14,20 +14,27 @@
 </style>
 
 <body>
-    <div id="wrapper">
-        <div id="side-nav">
+    <div id="app-wrapper">
+        <div id="side-nav"> <!--This section shows all the apps you have-->
             <ul style="list-style:none">
-                <li><a href="#" id="home" class="nav" alt="My Passwords"><i class="fas fa-passport"></i></a></li>
-                <li><a href="#" id="addPassword" class="nav" alt="Add A Password"><i class="fa fa-key"></i></a></li>
-                <li><a href="#" id="search" class="nav" alt="IDK Search?"><i class="fa fa-search"></i></a></li>
-                <li><a href="#" id="import" class="nav"><i class="fa fa-file-import"></i></a></li>
-                <li><a href="#" id="settings" class="nav"><i class="fa fa-cog"></i></a></li>
+                <li><a href="#" id="pwdManager" class="nav" alt="Password Manager"><i class="fas fa-passport"></i></a></li>
+                <li><a href="#" id="snippets" class="nav" alt="Snippets"><i class="fa fa-file-alt"></i></a></li>
+                <li><a href="#" id="formatter" class="nav" alt="Formatter"><i class="fa fa-indent"></i></a></li>
+                <li><a href="#" id="autoPost" class="nav" alt="Auto Poster"><i class="fa fa-file-import"></i></a></li>
+                <li><a href="#" id="roledex" class="nav" alt="Auto Poster"><i class="fa fa-address-card"></i></a></li>
+                <li><a href="#" id="extract" class="nav" alt="Exporter"><i class="fa fa-layer-group"></i></a></li>
+
+                <li><a href="https://google.com/" id="getNewApp" class="link" alt="Add New App"><i class="fa fa-plus"></i></a></li>
             </ul>
         </div>
-        <div id="top-bar">
-            <ul>
-                <li><a href="#"><i class="fa fa-user"></i></a></li>
-            </ul>
+        <div id="top-bar"> <!--This section changed depending which app you have selected-->
+                <ul style="list-style:none">
+                    <li><a href="#" id="home" class="nav" alt="My Passwords"><i class="fas fa-passport"></i></a></li>
+                    <li><a href="#" id="addPassword" class="nav" alt="Add A Password"><i class="fa fa-key"></i></a></li>
+                    <li><a href="#" id="search" class="nav" alt="IDK Search?"><i class="fa fa-search"></i></a></li>
+                    <li><a href="#" id="import" class="nav"><i class="fa fa-file-import"></i></a></li>
+                    <li><a href="#" id="settings" class="nav"><i class="fa fa-cog"></i></a></li>
+                </ul> 
         </div>
         <div id="main">
 

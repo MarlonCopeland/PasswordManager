@@ -1,6 +1,7 @@
 //holds functions that handle text manipulation etc.
 const {clipboard} = require('electron');
 const cryptoJS = require('crypto-js');
+const fs = require("fs");
 
 function copyToClipboard (text){
     clipboard.writeText(text);
@@ -29,7 +30,15 @@ function DecryptText(text)
     var decryptedText = bytes.toString(cryptoJS.enc.Utf8);
     return decryptedText;
 }
+
+function WriteToTextFile(text, filename)
+{
+ fs.writeFile("C:/output/" + filename, text);
+
+}
+
 module.exports.copyToClipboard = copyToClipboard;
 module.exports.getPasswordFromLoginName = getPasswordFromLoginName;
 module.exports.EncryptText = EncryptText;
 module.exports.DecryptText = DecryptText;
+module.exports.WriteToTextFile = WriteToTextFile;
