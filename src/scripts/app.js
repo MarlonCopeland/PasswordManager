@@ -4,6 +4,8 @@ var path = require("path");
 var fs = require("fs");
 var View = require("../scripts/view");
 var dataManager = require("../scripts/jsonDataManager");
+var exportManager = require("../scripts/export.js");
+
 const storage = require("electron-json-storage");
 
 
@@ -25,6 +27,15 @@ var App = function(){
         var view = new View("addPassword");
         this.emit("rendered", view.toHtml());
         dataManager.editLogin(loginName);
+    });
+    this.on("delete-login",function(loginName){
+        console.log("delete-login emitted")
+        dataManager.deleteLogin(loginName);
+        this.emit("view-selected", "home");
+    });
+    this.on("test-click",function(){
+        console.log("test-click emitted")
+        exportManager.ConnectAndOutput();
     });
 };
 

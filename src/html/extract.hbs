@@ -1,0 +1,27 @@
+<h1 id="Title">Test Connection to local SQL</h1>
+<h2 id="StatusText"></h2>
+<form>
+
+    
+</form>
+<div id="result">
+
+</div>
+<button id="btnTest">Test Connection</button>
+<!--<script src="../scripts/jsonDataManager.js" />-->
+
+<script>
+        var exportjs = require("../scripts/export.js");
+
+    $(function () {
+        $("#btnTest").on("click", function (ev) {
+
+            app.emit("test-click");
+            //svar loginName = $("#loginName").val();
+
+
+        });
+    });
+</script>
+
+

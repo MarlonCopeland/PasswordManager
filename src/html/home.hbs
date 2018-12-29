@@ -26,6 +26,7 @@
  <div></div>
     <button onclick="EditLoginDetailsClick()">Edit Login Details</button>
     <button onclick="CopyToClipboardClick()">Copy Password to Clipboard</button>
+    <button onclick="DeletePasswordClick()">Delete Password</button>
 </div>
 <script>
     var lhtml = "";
@@ -51,8 +52,21 @@
         app.emit("edit-login",textManager.getPasswordFromLoginName(loginName));
     };
     function CopyToClipboardClick(){
-        textManager.copyToClipboard(document.getElementById("loginPassword").innerHTML)
+        console.log(document.getElementById("loginName").innerHTML)
+        textManager.copyToClipboard(document.getElementById("loginPassword").value)
     };
+    function DeletePasswordClick(){
+        var loginName = document.getElementById("loginName").innerHTML;
+        app.emit("delete-login",textManager.getPasswordFromLoginName(loginName) )
+    };
+
+
+function importLogins(){
+    dm.importLogins();
+}
+function getAllLogins(){
+    dm.getAllLogins();
+}
     $(function (){
         
         //app.emit("load-logins", loginsHTML);

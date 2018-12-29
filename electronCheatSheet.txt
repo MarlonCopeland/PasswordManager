@@ -1,1 +1,17 @@
 npm init -- initializes node project
+
+IPC (Inter-Process Communication) sync or async versions
+ipc.sendsync (sync)
+ipc.send (async)
+
+Webcontents Events
+
+learn node expector
+look into getting electron-builder (apparently will create the window's installer), right now i'm using electron-packager
+
+For Updating An Existing App:
+look into Electron-Updater (3rd party electron Updater) OOB Electron is more complex
+
+look into Electron Forge
+
+Store examples of things in this file
