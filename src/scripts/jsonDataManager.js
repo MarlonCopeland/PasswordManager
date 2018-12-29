@@ -8,7 +8,7 @@ const textManager = require("../scripts/textManager");
 storage.setDataPath(os.tmpdir() +"/pwm/");
 const datapath = storage.getDataPath();
 //console.log(datapath);
-
+//TODO: ADD feature to store a recovery file
 const login = {name: "", 
 description: "",
 username: "",
