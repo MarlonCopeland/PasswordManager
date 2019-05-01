@@ -1,4 +1,12 @@
 npm init -- initializes node project
+npm install electron 
+
+
+npm update -- get latest versions and missing npm packages 
+
+npm start - runs "electron ." check package.json file
+
+
 
 IPC (Inter-Process Communication) sync or async versions
 ipc.sendsync (sync)
