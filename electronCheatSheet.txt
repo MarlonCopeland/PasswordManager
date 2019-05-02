@@ -23,3 +23,4 @@ look into Electron-Updater (3rd party electron Updater) OOB Electron is more com
 look into Electron Forge
 
 Store examples of things in this file
+

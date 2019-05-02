@@ -1,0 +1,7 @@
+Swiss App Prefix abbrevisations
+
+PWDT - Passwords Tool
+CTST - Contacts Tool
+DBST - Database Tool
+SNPT - Snippets Tool
+

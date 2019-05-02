@@ -15,13 +15,13 @@
 
 <body>
     <div id="app-wrapper">
-        <div id="side-nav"> <!--This section shows all the apps you have-->
+        <div id="side-nav"> <!--This section shows all the apps you have, TODO: Create a script that loads html li for each app you have loaded-->
             <ul style="list-style:none">
                 <li><a href="#" id="pwdManager" class="nav" alt="Password Manager"><i class="fas fa-passport"></i></a></li>
                 <li><a href="#" id="snippets" class="nav" alt="Snippets"><i class="fa fa-file-alt"></i></a></li>
                 <li><a href="#" id="formatter" class="nav" alt="Formatter"><i class="fa fa-indent"></i></a></li>
                 <li><a href="#" id="autoPost" class="nav" alt="Auto Poster"><i class="fa fa-file-import"></i></a></li>
-                <li><a href="#" id="roledex" class="nav" alt="Auto Poster"><i class="fa fa-address-card"></i></a></li>
+                <li><a href="#" id="roledex" class="nav" alt="Roledex"><i class="fa fa-address-card"></i></a></li>
                 <li><a href="#" id="extract" class="nav" alt="Exporter"><i class="fa fa-layer-group"></i></a></li>
 
                 <li><a href="https://google.com/" id="getNewApp" class="link" alt="Add New App"><i class="fa fa-plus"></i></a></li>
@@ -49,12 +49,18 @@
         $("#main").html(rendered);
     });
 
-    var showContent = function (view) {
-        app.emit("view-selected", view);
+    var showContent = function (view, appFolder) {
+        app.emit("view-selected", view, appFolder);
     };
 
+    var loadSwissApps = function(){
+        array.forEach(element => {
+            //TODO: Use this to take in an array of all the apps you have then output li tag inside of nav ul
+        });
+    }
+
     $(function () {
-        showContent("home");
+        showContent("home", "PasswordsTool");
         // $("#home").on("click", function(){
         //     app.emit("view-selected", "home");
         // });
@@ -64,9 +70,9 @@
         // });
         $(".nav").on("click", function (ev) {
             ev.preventDefault();
-            showContent(this.id);
+            showContent(this.id, "PasswordsTool");
         });
-        //alternate implamentation that passess in the id...
+        //alternate implementation that passess in the id...
 
     });
 </script>

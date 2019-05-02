@@ -10,8 +10,8 @@ const storage = require("electron-json-storage");
 
 
 var App = function(){
-    this.on("view-selected", function(viewName){
-        var view = new View(viewName);
+    this.on("view-selected", function(viewName, appFolder){
+        var view = new View(viewName, appFolder);
         this.emit("rendered",view.toHtml());
     });
     this.on("submit-click", function(login){
