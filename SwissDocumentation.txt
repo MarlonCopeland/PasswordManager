@@ -5,3 +5,9 @@ CTST - Contacts Tool
 DBST - Database Tool
 SNPT - Snippets Tool
 
+
+Command Flow //TODO: Create some sort of UML diagram for this
+**Startup Command Flow** 
+
+**Click Command Flow**
+Mainwindow > Script Tag JS > View > App > FeatureSpecific JS File 

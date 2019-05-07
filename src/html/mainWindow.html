@@ -14,6 +14,15 @@
 </style>
 
 <body>
+        <div class="menu">
+                <ul class="menu-options">
+                  <li class="menu-option">Back</li>
+                  <li class="menu-option">Reload</li>
+                  <li class="menu-option">Save</li>
+                  <li class="menu-option">Save As</li>
+                  <li class="menu-option">Inspect</li>
+                </ul>
+              </div>
     <div id="app-wrapper">
         <div id="side-nav"> <!--This section shows all the apps you have, TODO: Create a script that loads html li for each app you have loaded-->
             <ul style="list-style:none">
@@ -43,6 +52,38 @@
     <script>require('../scripts/renderer.js')</script>
 </body>
 <script>
+
+/*Context Menu Code*/
+const menu = document.querySelector(".menu");
+let menuVisible = false;
+
+const toggleMenu = command => {
+  menu.style.display = command === "show" ? "block" : "none";
+  menuVisible = !menuVisible;
+};
+
+const setPosition = ({ top, left }) => {
+  menu.style.left = `${left}px`;
+  menu.style.top = `${top}px`;
+  toggleMenu("show");
+};
+
+window.addEventListener("click", e => {
+  if(menuVisible)toggleMenu("hide");
+});
+
+window.addEventListener("contextmenu", e => {
+  e.preventDefault();
+  const origin = {
+    left: e.pageX,
+    top: e.pageY
+  };
+  setPosition(origin);
+  return false;
+});
+
+/*End Context Menu Code*/
+
     var app = require("../scripts/app");
 
     app.on("rendered", function (rendered) {

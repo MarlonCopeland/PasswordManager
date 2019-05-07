@@ -18,7 +18,7 @@ app.on('ready', _ => {
     // mainWindow.loadURL(url.format({
     //     pathname: path.join(__dirname, '//html//mainWindow.html'),
     //     protocol:'file:',
-    //     slashes: true
+    //     slashes: trueelec
     // }))
     //TODO: Fix this so I can put the main.js inside the scripts folder
     mainWindow.loadURL('file://' + __dirname + '/html/mainWindow.html')
@@ -35,4 +35,7 @@ app.on('ready', _ => {
 
 // })
 
-
+app.on("window-all-closed", function(){
+    console.log("this happened");
+   app.quit(); 
+});
