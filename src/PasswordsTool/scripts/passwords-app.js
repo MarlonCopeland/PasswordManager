@@ -1,3 +1,5 @@
+/** This file handles all passwords tool specific functions */
+
 var Emitter = require("events").EventEmitter;
 var util = require("util");
 var path = require("path");
